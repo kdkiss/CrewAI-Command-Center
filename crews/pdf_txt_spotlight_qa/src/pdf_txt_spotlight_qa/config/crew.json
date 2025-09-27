@@ -1,0 +1,13 @@
+{
+  "name": "pdf_txt_spotlight_qa",
+  "description": "Spotlight answers that blend PDF and TXT evidence with precise citations.",
+  "icon": "",
+  "agent_order": [
+    "doc_reader",
+    "answerer"
+  ],
+  "task_order": [
+    "doc_reader_task",
+    "answerer_task"
+  ]
+}

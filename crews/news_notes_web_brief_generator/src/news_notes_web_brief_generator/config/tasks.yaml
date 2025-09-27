@@ -1,0 +1,26 @@
+identify_top_sources:
+  description: >-
+    Use news and web search to identify the two to three most relevant and timely
+    sources about {topic}. Favor recent coverage (published within the last 30 days)
+    from reputable outlets. Capture the article title, URL, publication date, and a
+    one-sentence justification for why each link matters to operations teams.
+  expected_output: >-
+    A short ranked list (2-3 entries) summarizing the best sources to brief on
+    {topic}. Each entry should include: 1) title, 2) direct URL, 3) publication date,
+    4) one-sentence rationale describing the operational relevance.
+
+draft_markdown_brief:
+  description: >-
+    Read the selected sources in depth and create a concise Markdown briefing about
+    {topic}. Distill the key operational insights into punchy bullet points, include
+    context or implications when helpful, and cite each point with inline reference
+    numbers that map to a "Sources" section. Limit the brief to the essentials so the
+    reader can absorb it in under a minute.
+  expected_output: >-
+    A Markdown document containing: 1) Title line naming the topic, 2) Timestamp for
+    when the brief was prepared, 3) 3-6 bullet points summarizing the most actionable
+    insights, 4) Optional sub-bullets for critical details, 5) A "Sources" section with
+    numbered references linking back to the original articles (matching the inline
+    citations). Write to `output/brief.md`.
+  dependencies:
+    - identify_top_sources

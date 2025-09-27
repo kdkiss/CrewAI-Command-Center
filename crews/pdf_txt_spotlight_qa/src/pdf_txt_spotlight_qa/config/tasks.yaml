@@ -1,0 +1,24 @@
+doc_reader_task:
+  description: |
+    Review the provided PDF ({pdf}) and appendix ({txt}) to collect the most relevant
+    passages that answer the question: "{query}". Use the PDFSearchTool to capture page
+    references and the TXTSearchTool for appendix sections. Compile the findings into
+    succinct notes that include the page number (for PDF content) or section header/line
+    reference (for TXT content) for every snippet you select.
+  expected_output: |
+    A markdown list of 5-7 bullet points. Each bullet must contain a short summary,
+    a citation to the source (e.g., "PDF p.3" or "Appendix section Metrics"), and the
+    original quote or paraphrase enclosed in quotation marks.
+  agent: doc_reader
+answerer_task:
+  description: |
+    Using the curated snippets from the previous task, compose a focused answer to
+    "{query}". Highlight why each metric matters, when it is most useful, and any nuances
+    noted in the appendix. Ensure the response contains clearly labeled sections and that
+    every claim cites the originating page or section from the provided materials.
+  expected_output: |
+    A well-structured markdown document saved to output/answers.md containing:
+      - A short overview paragraph.
+      - A bullet list comparing at least three evaluation metrics, each with citations.
+      - A "References" section listing the cited pages/sections.
+  agent: answerer

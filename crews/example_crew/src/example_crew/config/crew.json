@@ -1,0 +1,13 @@
+{
+  "name": "example_crew",
+  "description": "Welcome to the ExampleCrew Crew project, powered by [crewAI](https://crewai.com).",
+  "icon": "",
+  "agent_order": [
+    "researcher",
+    "reporting_analyst"
+  ],
+  "task_order": [
+    "research_task",
+    "reporting_task"
+  ]
+}

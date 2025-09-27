@@ -1,0 +1,65 @@
+---
+research_hot_how_to_topics:
+  description: |-
+    Research and identify the top 5 trending how-to topics in {niche} that have high search volume and content potential. Focus on topics that are currently popular, have search demand, but may have content gaps.
+
+    For the most promising topic, also analyze:
+    - Competing content to determine optimal guide length (short 1000-1500 words, medium 2000-3000 words, or long 4000-6000 words)
+    - Target audience to determine best content style (beginner-friendly, intermediate, advanced, conversational, or professional)
+    - Key SEO keywords and search intent
+
+    Keep the research focused and efficient. Include search volume estimates, competition analysis, and trending indicators for each topic.
+  expected_output: "A ranked list of 5 hot how-to topics in {niche} with analysis
+    including: topic title, estimated search volume, competition level, trending status,
+    and brief reasoning.\n\nFor the #1 recommended topic, also provide:\n- Optimal
+    content length recommendation (short/medium/long) with reasoning\n- Best content
+    style approach with target audience analysis  \n- Top 5 SEO keywords to target\n-
+    Basic content structure recommendations"
+  agent: trend_research_specialist
+create_comprehensive_how_to_guide:
+  description: "Based on the research findings, select the most promising topic from
+    the list and create a comprehensive how-to guide following the research recommendations
+    for optimal content length and style. \n\nThe guide should include: clear introduction,
+    step-by-step instructions, necessary tools/resources, tips and best practices,
+    common mistakes to avoid, and conclusion. \n\nUse the research-determined specifications
+    for:\n- Content length (follow the research recommendation: short = 1000-1500
+    words, medium = 2000-3000 words, long = 4000-6000 words)\n- Writing style (follow
+    the research recommendation: beginner-friendly, intermediate, advanced, conversational,
+    or professional)\n- SEO keywords and content structure based on research insights\n\nEnsure
+    the content is actionable, provides real value to readers, and matches the target
+    audience identified in the research."
+  expected_output: 'A complete, well-structured how-to guide in markdown format with:
+    engaging SEO-optimized title, introduction, detailed step-by-step instructions,
+    required tools/materials list, pro tips, troubleshooting section, and conclusion.
+    The guide should follow the research-recommended length and style requirements
+    and be optimally structured for the identified target audience and search intent.'
+  agent: how_to_guide_creator
+  context:
+  - research_hot_how_to_topics
+upload_guide_to_digital_products_db:
+  description: |-
+    First, search for the "Digital Products DB" database in Notion to find its correct ID.
+    Then create a NEW PAGE ENTRY that summarizes the created guide, rather than uploading the full content.
+
+    Create a minimal, well-formatted page that includes ONLY the following elements:
+    - Page title: Use the saved file name if available; otherwise use the guide's title.
+    - Summary: 80–120 words summarizing the guide in plain text.
+    - Amazon KDP Keywords: 10–15 comma-separated, high-intent keywords optimized for Amazon KDP search.
+    - Amazon KDP Description: 150–300 words, persuasive and benefit-focused, compliant with KDP guidelines.
+
+    Notes:
+    - Do NOT paste the full guide content into Notion.
+    - Keep formatting simple (plain text with clear headings). Avoid complex blocks.
+    - First, list local files using `Find recent markdown files` for `.`. Identify the most recent or most relevant `.md` file for this run (e.g., by matching the guide's title or subject) — this is the filename to use.
+    - Read only an excerpt of the selected file using `Read file excerpt` (e.g., max_chars=6000) to keep the prompt small.
+    - Derive a concise 80–120 word Summary based on the guide content.
+    - Invoke `notion_create_summary_page` with: Title (prefer the filename as the page title), Filename (the `.md` file name), and Summary only.
+    - If the Notion database has matching properties (e.g., "Summary", "Keywords", "KDP Description"), the tool will set them. If these properties do not exist, the tool will attempt to create them (rich_text). If that fails, it will place the sections in the page body.
+    - Database selection logic (strict): If `NOTION_DATABASE_ID` is set in the environment, the tool uses it. Otherwise it searches by name. It will only create a page on an exact name match; it must not fall back to another database.
+    - Deduplication: If a page with the same title already exists, update it in place instead of creating a new one. Prefer the filename as the title when available.
+  expected_output: |-
+    A Notion page created or updated in "Digital Products DB" that contains only: Title (prefer filename), Filename property, and Summary.
+    Return the actual Notion page URL from the tool response. Do not claim success unless a concrete URL or page ID is returned.
+  agent: digital_products_database_manager
+  context:
+  - create_comprehensive_how_to_guide

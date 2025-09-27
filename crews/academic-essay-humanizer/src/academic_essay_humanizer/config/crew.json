@@ -1,0 +1,13 @@
+{
+  "name": "academic-essay-humanizer",
+  "description": "Transform AI-generated drafts into natural academic prose",
+  "icon": "",
+  "agent_order": [
+    "editor",
+    "style_checker"
+  ],
+  "task_order": [
+    "humanize_draft",
+    "enforce_style"
+  ]
+}

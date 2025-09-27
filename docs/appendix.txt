@@ -1,0 +1,29 @@
+Appendix: Evaluation Metric Notes
+
+Accuracy:
+- Measures proportion of correct predictions.
+- Sensitive to class imbalance; can mislead when negatives dominate.
+
+Precision:
+- True positives divided by predicted positives.
+- High precision means few false positives.
+
+Recall:
+- True positives divided by actual positives.
+- High recall means few false negatives.
+
+F1 Score:
+- Harmonic mean of precision and recall.
+- Useful when balancing false positives and false negatives.
+
+ROC-AUC:
+- Area under the Receiver Operating Characteristic curve.
+- Evaluates ranking quality across thresholds; robust to class imbalance.
+
+PR-AUC:
+- Area under Precision-Recall curve.
+- Highlights performance on positive class, especially in imbalanced datasets.
+
+Calibration:
+- Measures alignment between predicted probabilities and actual outcomes.
+- Reliability diagrams and Brier score assess calibration.

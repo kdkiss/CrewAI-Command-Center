@@ -1,0 +1,67 @@
+research_recent_fraud_intelligence:
+  description: 'Research the latest developments, incidents, and patterns related
+    to {fraud_topic} fraud schemes from the past 2 months with {region} coverage focus:
+
+
+    **Europe Focus**: Target European sources including EU regulatory bodies (ECB,
+    EBA, Europol, BaFin, FCA, ACPR, DNB), European news outlets (Reuters Europe, Financial
+    Times Europe, local newspapers), and industry publications. Search in English
+    and relevant European languages (German: "Betrug", French: "fraude", Dutch: "fraude",
+    Italian: "frode").
+
+
+    **Global Focus**: Search across all major regions with balanced coverage including
+    Europe, North America, Asia-Pacific, and emerging markets. Use international regulatory
+    sources, global news outlets, and cross-border fraud databases.
+
+
+    **North America Focus**: Target US/Canadian sources including regulatory bodies
+    (FinCEN, OCC, CFPB, FINTRAC), North American news outlets, and financial institution
+    alerts.
+
+
+    Look for new variants, documented cases, emerging patterns, and regulatory announcements
+    specific to the targeted region(s).'
+  expected_output: 'A comprehensive research report tailored to {region} coverage
+    containing: 1) Recent fraud incidents and cases related to {fraud_topic} from
+    the last 2 months in the specified region(s), 2) Documented fraud variants and
+    tactics from relevant jurisdictions, 3) Source links and publication dates including
+    region-appropriate sources, 4) Key regulatory announcements or industry warnings
+    from targeted regional authorities, 5) Initial assessment of threat level and
+    geographic impact within the specified coverage area.'
+analyze_fraud_patterns_and_trends:
+  description: Analyze the research findings to identify patterns, trends, and emerging
+    tactics in {fraud_topic} fraud schemes within the {region} focus area. Categorize
+    the fraud variants considering regional regulatory environments and cultural factors.
+    Assess the evolution of attack methods, identify common elements across different
+    incidents, and evaluate regional regulatory responses and industry countermeasures.
+    Focus on extracting actionable intelligence that can inform risk management strategies
+    for the specified region(s).
+  expected_output: 'A detailed analysis report with {region}-focused insights including:
+    1) Categorized fraud variants and tactics with region-specific risk assessment,
+    2) Identified patterns and trends in attack methods within the target region(s),
+    3) Timeline of developments and escalation patterns, 4) Assessment of relevant
+    regional regulatory and industry responses, 5) Risk level classification and potential
+    impact on regional sectors, 6) Emerging countermeasures and detection methods
+    applicable to the region(s), 7) Cross-border implications if applicable.'
+  dependencies:
+  - research_recent_fraud_intelligence
+create_executive_fraud_briefing:
+  description: Create a structured, professional briefing document on {fraud_topic}
+    fraud intelligence for compliance and risk management teams, tailored to {region}
+    coverage. The briefing should be executive-ready with region-appropriate regulatory
+    context, jurisdiction-specific recommendations, and proper source attribution.
+    Format the information to enable quick decision-making and include recommended
+    actions relevant to the specified region(s).
+  expected_output: 'A professional executive briefing in markdown format with {region}-focused
+    content containing: 1) Executive Summary with key regional findings and risk level,
+    2) Detailed findings section with fraud variants and regional tactics, 3) Trend
+    analysis and threat evolution within the target region(s), 4) Regional regulatory
+    alerts and industry warnings section, 5) Region-appropriate recommended actions
+    and countermeasures, 6) Source references with links and dates from regional sources,
+    7) Regional risk assessment matrix and jurisdiction-specific compliance considerations.
+    The document should be concise, regionally-relevant, and immediately actionable
+    for compliance professionals in the specified region(s).'
+  dependencies:
+  - research_recent_fraud_intelligence
+  - analyze_fraud_patterns_and_trends

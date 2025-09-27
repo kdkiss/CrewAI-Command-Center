@@ -1,0 +1,23 @@
+[project]
+name = "news_notes_web_brief_generator"
+version = "0.1.0"
+description = "news_notes_web_brief_generator using crewAI"
+authors = [{ name = "Your Name", email = "you@example.com" }]
+requires-python = ">=3.10,<3.14"
+dependencies = [
+    "crewai[tools]>=0.177.0,<1.0.0",
+]
+
+[project.scripts]
+news_notes_web_brief_generator = "news_notes_web_brief_generator.main:run"
+run_crew = "news_notes_web_brief_generator.main:run"
+train = "news_notes_web_brief_generator.main:train"
+replay = "news_notes_web_brief_generator.main:replay"
+test = "news_notes_web_brief_generator.main:test"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.crewai]
+type = "crew"

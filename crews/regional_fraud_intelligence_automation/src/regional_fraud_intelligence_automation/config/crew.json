@@ -1,0 +1,15 @@
+{
+  "name": "regional_fraud_intelligence_automation",
+  "description": "Welcome to the RegionalFraudIntelligenceAutomation Crew project",
+  "icon": "",
+  "agent_order": [
+    "fraud_intelligence_researcher",
+    "fraud_analyst",
+    "compliance_briefing_specialist"
+  ],
+  "task_order": [
+    "research_recent_fraud_intelligence",
+    "analyze_fraud_patterns_and_trends",
+    "create_executive_fraud_briefing"
+  ]
+}

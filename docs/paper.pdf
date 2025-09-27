@@ -1,0 +1,51 @@
+%PDF-1.4
+1 0 obj
+<< /Type /Catalog /Pages 2 0 R >>
+endobj
+2 0 obj
+<< /Type /Pages /Kids [3 0 R] /Count 1 >>
+endobj
+3 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Contents 4 0 R /Resources << /Font << /F1 5 0 R >> >> >>
+endobj
+4 0 obj
+<< /Length 278 >>
+stream
+BT
+/F1 18 Tf
+72 740 Td
+(Evaluation Metrics Overview) Tj
+/F1 12 Tf
+0 -24 Td
+(Accuracy measures the proportion of correct predictions across all classes.) Tj
+0 -18 Td
+(Precision focuses on the quality of positive predictions, limiting false alarms.) Tj
+0 -18 Td
+(Recall captures coverage of actual positives, ensuring critical cases are caught.) Tj
+0 -18 Td
+(The F1 score balances precision and recall, rewarding joint improvements.) Tj
+0 -18 Td
+(ROC-AUC evaluates ranking quality over thresholds, illustrating trade-offs.) Tj
+0 -18 Td
+(PR-AUC highlights positive class performance under imbalance.) Tj
+0 -18 Td
+(Calibration curves reveal whether predicted probabilities align with outcomes.) Tj
+ET
+endstream
+endobj
+5 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica >>
+endobj
+xref
+0 6
+0000000000 65535 f 
+0000000010 00000 n 
+0000000053 00000 n 
+0000000106 00000 n 
+0000000236 00000 n 
+0000000455 00000 n 
+trailer
+<< /Size 6 /Root 1 0 R >>
+startxref
+511
+%%EOF

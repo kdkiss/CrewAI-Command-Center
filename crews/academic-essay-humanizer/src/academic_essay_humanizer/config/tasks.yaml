@@ -1,0 +1,18 @@
+humanize_draft:
+  description: 'Rewrite the provided draft into natural, human-like academic prose.
+    Preserve the original meaning while enhancing clarity and tone.
+
+    '
+  expected_output: 'A refined academic version of the draft that reads naturally and
+    is free of AI-like artifacts.
+
+    '
+enforce_style:
+  description: 'Apply the {citation_style} citation style to the rewritten draft,
+    ensuring formatting and references follow the selected style guidelines.
+
+    '
+  expected_output: 'The humanized draft updated to conform to the {citation_style}
+    citation style.
+
+    '

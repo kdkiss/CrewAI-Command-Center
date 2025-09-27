@@ -1,0 +1,89 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="720" viewBox="0 0 1280 720" role="img" aria-labelledby="title desc">
+  <title id="title">Crew management console overview</title>
+  <desc id="desc">Modern representation of the crew management workspace with run controls, health cards, and a live execution monitor.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#020617" />
+      <stop offset="100%" stop-color="#111827" />
+    </linearGradient>
+    <linearGradient id="accent" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#38bdf8" />
+      <stop offset="100%" stop-color="#818cf8" />
+    </linearGradient>
+    <filter id="shadow" x="-12%" y="-14%" width="124%" height="140%" color-interpolation-filters="sRGB">
+      <feDropShadow dx="0" dy="18" stdDeviation="28" flood-color="#020617" flood-opacity="0.6" />
+    </filter>
+    <clipPath id="windowClip">
+      <rect x="80" y="60" width="1120" height="600" rx="32" ry="32" />
+    </clipPath>
+    <style>
+      .label { font: 600 20px 'Inter', 'Segoe UI', sans-serif; fill: #94a3b8; }
+      .title { font: 700 34px 'Inter', 'Segoe UI', sans-serif; fill: #f8fafc; }
+      .subtitle { font: 500 18px 'Inter', 'Segoe UI', sans-serif; fill: #cbd5f5; }
+      .button { font: 600 18px 'Inter', 'Segoe UI', sans-serif; fill: #0b1120; }
+      .pill { font: 500 16px 'Inter', 'Segoe UI', sans-serif; fill: #e2e8f0; }
+      .card-title { font: 600 18px 'Inter', 'Segoe UI', sans-serif; fill: #cbd5f5; }
+      .card-value { font: 700 30px 'Inter', 'Segoe UI', sans-serif; fill: #38bdf8; }
+      .log-line { font: 500 16px 'Fira Code', 'Courier New', monospace; fill: #94a3b8; }
+      .log-line--info { fill: #38bdf8; }
+      .log-line--warn { fill: #fbbf24; }
+      .log-line--error { fill: #f87171; }
+    </style>
+  </defs>
+  <rect width="1280" height="720" fill="url(#bg)" />
+  <g filter="url(#shadow)">
+    <rect x="80" y="60" width="1120" height="600" rx="32" ry="32" fill="#0b1220" stroke="#1f2937" stroke-width="2" />
+    <g clip-path="url(#windowClip)">
+      <rect x="80" y="60" width="1120" height="64" fill="#101a2c" />
+      <circle cx="112" cy="92" r="8" fill="#ef4444" />
+      <circle cx="136" cy="92" r="8" fill="#fbbf24" />
+      <circle cx="160" cy="92" r="8" fill="#22c55e" />
+      <text x="200" y="99" class="label">CrewAI Command Center · Research crew</text>
+
+      <text x="132" y="168" class="title">Research Crew</text>
+      <text x="132" y="204" class="subtitle">Orchestrate autonomous research workflows with human-in-the-loop controls.</text>
+
+      <g>
+        <rect x="132" y="228" width="120" height="44" rx="12" ry="12" fill="url(#accent)" />
+        <text x="162" y="256" class="button">Start</text>
+        <rect x="264" y="228" width="124" height="44" rx="12" ry="12" fill="#1e293b" stroke="#334155" stroke-width="1.5" />
+        <text x="294" y="256" class="button" fill="#e2e8f0">Pause</text>
+        <rect x="400" y="228" width="134" height="44" rx="12" ry="12" fill="#1e293b" stroke="#ef4444" stroke-width="1.5" />
+        <text x="436" y="256" class="button" fill="#fca5a5">Stop</text>
+        <rect x="552" y="228" width="220" height="44" rx="12" ry="12" fill="#111c33" stroke="#1f2a44" stroke-width="1.5" />
+        <text x="576" y="255" class="pill">Status: Running · Healthy</text>
+        <rect x="784" y="228" width="284" height="44" rx="12" ry="12" fill="#111c33" stroke="#1f2a44" stroke-width="1.5" />
+        <text x="808" y="255" class="pill">Last deploy: 2 minutes ago</text>
+      </g>
+
+      <g>
+        <rect x="132" y="304" width="280" height="136" rx="20" ry="20" fill="#101a2c" stroke="#1f2a44" stroke-width="1.5" />
+        <text x="156" y="344" class="card-title">Active agents</text>
+        <text x="156" y="384" class="card-value">4</text>
+        <text x="156" y="412" class="subtitle">Running · 1 idle</text>
+      </g>
+      <g>
+        <rect x="428" y="304" width="280" height="136" rx="20" ry="20" fill="#101a2c" stroke="#1f2a44" stroke-width="1.5" />
+        <text x="452" y="344" class="card-title">Task queue</text>
+        <text x="452" y="384" class="card-value">12 items</text>
+        <text x="452" y="412" class="subtitle">ETA · 8m remaining</text>
+      </g>
+      <g>
+        <rect x="724" y="304" width="344" height="136" rx="20" ry="20" fill="#101a2c" stroke="#1f2a44" stroke-width="1.5" />
+        <text x="748" y="344" class="card-title">Throughput</text>
+        <text x="748" y="384" class="card-value">18 jobs/hr</text>
+        <text x="748" y="412" class="subtitle">Peak · 24 jobs/hr</text>
+        <rect x="748" y="428" width="268" height="8" rx="4" ry="4" fill="#1e293b" />
+        <rect x="748" y="428" width="212" height="8" rx="4" ry="4" fill="url(#accent)" />
+      </g>
+
+      <rect x="132" y="468" width="936" height="168" rx="24" ry="24" fill="#080f1d" stroke="#1f2a44" stroke-width="1.5" />
+      <text x="156" y="502" class="card-title">Execution monitor</text>
+      <line x1="156" y1="512" x2="1044" y2="512" stroke="#1f2937" stroke-width="1" />
+      <text x="156" y="542" class="log-line log-line--info">[12:21:03] ✔ Analyst validated research summary</text>
+      <text x="156" y="572" class="log-line log-line--warn">[12:21:08] • Planner queued interview synthesis task</text>
+      <text x="156" y="602" class="log-line log-line--error">[12:21:15] ! Reviewer flagged citation mismatch</text>
+      <text x="156" y="632" class="log-line">[12:21:22] ↺ Controller requested rerun for step 14</text>
+    </g>
+  </g>
+</svg>

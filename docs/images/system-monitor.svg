@@ -1,0 +1,110 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="720" viewBox="0 0 1280 720" role="img" aria-labelledby="title desc">
+  <title id="title">System monitoring dashboard</title>
+  <desc id="desc">Updated system monitor panel featuring resource cards, latency charts, and request telemetry.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#020617" />
+      <stop offset="100%" stop-color="#0f172a" />
+    </linearGradient>
+    <linearGradient id="accent" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#38bdf8" />
+      <stop offset="100%" stop-color="#818cf8" />
+    </linearGradient>
+    <linearGradient id="success" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#34d399" />
+      <stop offset="100%" stop-color="#22c55e" />
+    </linearGradient>
+    <filter id="shadow" x="-12%" y="-14%" width="124%" height="140%" color-interpolation-filters="sRGB">
+      <feDropShadow dx="0" dy="18" stdDeviation="28" flood-color="#020617" flood-opacity="0.6" />
+    </filter>
+    <clipPath id="windowClip">
+      <rect x="80" y="60" width="1120" height="600" rx="32" ry="32" />
+    </clipPath>
+    <style>
+      .meta { font: 600 20px 'Inter', 'Segoe UI', sans-serif; fill: #94a3b8; }
+      .heading { font: 700 32px 'Inter', 'Segoe UI', sans-serif; fill: #f8fafc; }
+      .subheading { font: 500 18px 'Inter', 'Segoe UI', sans-serif; fill: #cbd5f5; }
+      .card-title { font: 600 16px 'Inter', 'Segoe UI', sans-serif; fill: #cbd5f5; }
+      .card-value { font: 700 32px 'Inter', 'Segoe UI', sans-serif; fill: #f8fafc; }
+      .card-sub { font: 500 16px 'Inter', 'Segoe UI', sans-serif; fill: #94a3b8; }
+      .chart-label { font: 500 14px 'Inter', 'Segoe UI', sans-serif; fill: #64748b; }
+      .badge { font: 600 16px 'Inter', 'Segoe UI', sans-serif; fill: #e2e8f0; }
+    </style>
+  </defs>
+  <rect width="1280" height="720" fill="url(#bg)" />
+  <g filter="url(#shadow)">
+    <rect x="80" y="60" width="1120" height="600" rx="32" ry="32" fill="#0b1220" stroke="#1f2937" stroke-width="2" />
+    <g clip-path="url(#windowClip)">
+      <rect x="80" y="60" width="1120" height="64" fill="#101a2c" />
+      <circle cx="112" cy="92" r="8" fill="#ef4444" />
+      <circle cx="136" cy="92" r="8" fill="#fbbf24" />
+      <circle cx="160" cy="92" r="8" fill="#22c55e" />
+      <text x="200" y="99" class="meta">System Monitor · CrewAI Command Center</text>
+
+      <text x="132" y="166" class="heading">Infrastructure Health</text>
+      <text x="132" y="202" class="subheading">Track utilization, uptime, and request telemetry in real time.</text>
+
+      <g>
+        <rect x="132" y="224" width="232" height="140" rx="24" ry="24" fill="#101a2c" stroke="#1f2a44" stroke-width="1.5" />
+        <text x="156" y="260" class="card-title">CPU usage</text>
+        <text x="156" y="298" class="card-value">28%</text>
+        <rect x="156" y="312" width="184" height="10" rx="5" ry="5" fill="#1f2937" />
+        <rect x="156" y="312" width="128" height="10" rx="5" ry="5" fill="url(#accent)" />
+        <text x="156" y="332" class="card-sub">8 cores · 3.40 GHz</text>
+      </g>
+      <g>
+        <rect x="380" y="224" width="232" height="140" rx="24" ry="24" fill="#101a2c" stroke="#1f2a44" stroke-width="1.5" />
+        <text x="404" y="260" class="card-title">Memory usage</text>
+        <text x="404" y="298" class="card-value" fill="#34d399">62%</text>
+        <rect x="404" y="312" width="184" height="10" rx="5" ry="5" fill="#1f2937" />
+        <rect x="404" y="312" width="156" height="10" rx="5" ry="5" fill="url(#success)" />
+        <text x="404" y="332" class="card-sub">19.8 GB / 32 GB used</text>
+      </g>
+      <g>
+        <rect x="628" y="224" width="236" height="140" rx="24" ry="24" fill="#101a2c" stroke="#1f2a44" stroke-width="1.5" />
+        <text x="652" y="260" class="card-title">System uptime</text>
+        <text x="652" y="298" class="card-value">3d 12h 14m</text>
+        <text x="652" y="328" class="card-sub">Last restart · manual</text>
+        <rect x="652" y="338" width="188" height="10" rx="5" ry="5" fill="#1f2937" />
+        <rect x="652" y="338" width="156" height="10" rx="5" ry="5" fill="url(#accent)" />
+      </g>
+      <g>
+        <rect x="880" y="224" width="188" height="140" rx="24" ry="24" fill="#101a2c" stroke="#1f2a44" stroke-width="1.5" />
+        <text x="904" y="260" class="card-title">Backend health</text>
+        <text x="904" y="298" class="card-value" fill="#34d399">OK</text>
+        <text x="904" y="328" class="card-sub">4 services · healthy</text>
+        <rect x="904" y="344" width="148" height="12" rx="6" ry="6" fill="#0f172a" />
+        <rect x="904" y="344" width="112" height="12" rx="6" ry="6" fill="url(#success)" />
+      </g>
+
+      <rect x="132" y="384" width="612" height="232" rx="28" ry="28" fill="#080f1d" stroke="#1f2a44" stroke-width="1.5" />
+      <text x="156" y="420" class="card-title">Latency &amp; error metrics (rolling 5m)</text>
+      <line x1="156" y1="428" x2="720" y2="428" stroke="#1f2937" stroke-width="1" />
+      <polyline points="172,516 220,492 268,476 316,468 364,460 412,452 460,446 508,440 556,438 604,436 652,432 700,428" fill="none" stroke="url(#accent)" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" />
+      <polyline points="172,560 220,550 268,544 316,540 364,538 412,534 460,530 508,528 556,526 604,524 652,520 700,516" fill="none" stroke="#f87171" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="8 12" />
+      <text x="172" y="448" class="chart-label">p95 latency</text>
+      <text x="172" y="580" class="chart-label">error rate</text>
+      <rect x="568" y="396" width="156" height="36" rx="12" ry="12" fill="#101a2c" stroke="#1f2a44" stroke-width="1.5" />
+      <text x="588" y="420" class="badge">Average 182 ms</text>
+      <rect x="568" y="438" width="156" height="36" rx="12" ry="12" fill="#101a2c" stroke="#1f2a44" stroke-width="1.5" />
+      <text x="588" y="462" class="badge">p95 264 ms</text>
+      <rect x="568" y="480" width="156" height="36" rx="12" ry="12" fill="#101a2c" stroke="#1f2a44" stroke-width="1.5" />
+      <text x="588" y="504" class="badge">Errors 0.6%</text>
+
+      <rect x="764" y="384" width="304" height="232" rx="28" ry="28" fill="#101a2c" stroke="#1f2a44" stroke-width="1.5" />
+      <text x="788" y="420" class="card-title">Request telemetry</text>
+      <line x1="788" y1="428" x2="1044" y2="428" stroke="#1f2937" stroke-width="1" />
+      <text x="788" y="460" class="card-sub">Requests · 1,248</text>
+      <rect x="788" y="472" width="252" height="12" rx="6" ry="6" fill="#0f172a" />
+      <rect x="788" y="472" width="216" height="12" rx="6" ry="6" fill="url(#accent)" />
+      <text x="788" y="504" class="card-sub">Errors · 8</text>
+      <rect x="788" y="516" width="252" height="12" rx="6" ry="6" fill="#0f172a" />
+      <rect x="788" y="516" width="48" height="12" rx="6" ry="6" fill="#f87171" />
+      <text x="788" y="546" class="card-sub">Socket reconnects · 1</text>
+      <rect x="788" y="558" width="252" height="12" rx="6" ry="6" fill="#0f172a" />
+      <rect x="788" y="558" width="72" height="12" rx="6" ry="6" fill="#fbbf24" />
+      <rect x="788" y="600" width="252" height="44" rx="14" ry="14" fill="#080f1d" stroke="#1f2a44" stroke-width="1.5" />
+      <text x="808" y="628" class="badge">Status broadcast · Connected via Socket.IO</text>
+    </g>
+  </g>
+</svg>

@@ -1,0 +1,103 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="720" viewBox="0 0 1280 720" role="img" aria-labelledby="title desc">
+  <title id="title">Environment configuration editor</title>
+  <desc id="desc">Updated visualization of the environment manager with file navigation, highlighted variables, and autosave status.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#020617" />
+      <stop offset="100%" stop-color="#0f172a" />
+    </linearGradient>
+    <filter id="shadow" x="-12%" y="-14%" width="124%" height="140%" color-interpolation-filters="sRGB">
+      <feDropShadow dx="0" dy="18" stdDeviation="28" flood-color="#020617" flood-opacity="0.6" />
+    </filter>
+    <clipPath id="windowClip">
+      <rect x="80" y="60" width="1120" height="600" rx="32" ry="32" />
+    </clipPath>
+    <style>
+      .meta { font: 600 20px 'Inter', 'Segoe UI', sans-serif; fill: #94a3b8; }
+      .heading { font: 700 30px 'Inter', 'Segoe UI', sans-serif; fill: #f8fafc; }
+      .subheading { font: 500 18px 'Inter', 'Segoe UI', sans-serif; fill: #cbd5f5; }
+      .tree-title { font: 600 18px 'Inter', 'Segoe UI', sans-serif; fill: #e2e8f0; }
+      .tree-item { font: 500 17px 'Inter', 'Segoe UI', sans-serif; fill: #94a3b8; }
+      .tree-item--active { fill: #38bdf8; }
+      .gutter { font: 500 16px 'Fira Code', 'Courier New', monospace; fill: #475569; }
+      .code { font: 500 18px 'Fira Code', 'Courier New', monospace; }
+      .token-key { fill: #38bdf8; }
+      .token-value { fill: #fbbf24; }
+      .token-boolean { fill: #34d399; }
+      .badge { font: 500 16px 'Inter', 'Segoe UI', sans-serif; fill: #e2e8f0; }
+      .badge-strong { font: 600 16px 'Inter', 'Segoe UI', sans-serif; fill: #f8fafc; }
+    </style>
+  </defs>
+  <rect width="1280" height="720" fill="url(#bg)" />
+  <g filter="url(#shadow)">
+    <rect x="80" y="60" width="1120" height="600" rx="32" ry="32" fill="#0b1220" stroke="#1f2937" stroke-width="2" />
+    <g clip-path="url(#windowClip)">
+      <rect x="80" y="60" width="1120" height="64" fill="#101a2c" />
+      <circle cx="112" cy="92" r="8" fill="#ef4444" />
+      <circle cx="136" cy="92" r="8" fill="#fbbf24" />
+      <circle cx="160" cy="92" r="8" fill="#22c55e" />
+      <text x="200" y="99" class="meta">Environment management · research/.env</text>
+
+      <text x="132" y="164" class="heading">Environment Variables</text>
+      <text x="132" y="198" class="subheading">Edit, validate, and stage secrets before deploying a crew.</text>
+
+      <rect x="132" y="224" width="236" height="384" rx="20" ry="20" fill="#101a2c" stroke="#1f2a44" stroke-width="1.5" />
+      <text x="156" y="260" class="tree-title">crews/</text>
+      <text x="180" y="292" class="tree-item tree-item--active">research/.env</text>
+      <text x="180" y="326" class="tree-item">research/config.yaml</text>
+      <text x="180" y="360" class="tree-item">support/.env</text>
+      <text x="180" y="394" class="tree-item">support/config.yaml</text>
+      <text x="180" y="428" class="tree-item">sales/.env</text>
+      <text x="180" y="462" class="tree-item">ops/.env</text>
+      <rect x="156" y="486" width="188" height="48" rx="12" ry="12" fill="#111c33" stroke="#1f2a44" stroke-width="1.5" />
+      <text x="176" y="516" class="tree-item" fill="#e2e8f0">+ Add environment</text>
+
+      <rect x="388" y="224" width="516" height="384" rx="24" ry="24" fill="#080f1d" stroke="#1f2a44" stroke-width="1.5" />
+      <rect x="388" y="224" width="60" height="384" fill="#0f172a" opacity="0.9" />
+      <g>
+        <text x="412" y="258" class="gutter">1</text>
+        <text x="412" y="288" class="gutter">2</text>
+        <text x="412" y="318" class="gutter">3</text>
+        <text x="412" y="348" class="gutter">4</text>
+        <text x="412" y="378" class="gutter">5</text>
+        <text x="412" y="408" class="gutter">6</text>
+        <text x="412" y="438" class="gutter">7</text>
+        <text x="412" y="468" class="gutter">8</text>
+        <text x="412" y="498" class="gutter">9</text>
+        <text x="404" y="528" class="gutter">10</text>
+      </g>
+      <g>
+        <text x="460" y="258" class="code token-key">OPENAI_API_KEY</text>
+        <text x="720" y="258" class="code token-value">= "sk-live-••••"</text>
+        <text x="460" y="288" class="code token-key">RESEARCH_TOPICS</text>
+        <text x="756" y="288" class="code token-value">= "sustainability, policy"</text>
+        <text x="460" y="318" class="code token-key">SLACK_WEBHOOK</text>
+        <text x="736" y="318" class="code token-value">= "https://hooks.slack.com/..."</text>
+        <text x="460" y="348" class="code token-key">NEWS_API_KEY</text>
+        <text x="728" y="348" class="code token-value">= "na-live-••••"</text>
+        <text x="460" y="378" class="code token-key">DATA_CACHE_DIR</text>
+        <text x="748" y="378" class="code token-value">= "./storage/cache"</text>
+        <text x="460" y="408" class="code token-key">ENABLE_AUTOSAVE</text>
+        <text x="776" y="408" class="code token-boolean">= true</text>
+        <text x="460" y="438" class="code token-key">LOG_LEVEL</text>
+        <text x="684" y="438" class="code token-value">= "INFO"</text>
+      </g>
+
+      <rect x="924" y="224" width="244" height="180" rx="20" ry="20" fill="#111c33" stroke="#1f2a44" stroke-width="1.5" />
+      <text x="948" y="260" class="tree-title">Validation</text>
+      <text x="948" y="292" class="tree-item" fill="#22c55e">✔ All variables resolved</text>
+      <text x="948" y="324" class="tree-item">8 secrets masked</text>
+      <text x="948" y="356" class="tree-item">Autosave every 30s</text>
+
+      <rect x="924" y="422" width="244" height="186" rx="20" ry="20" fill="#101a2c" stroke="#1f2a44" stroke-width="1.5" />
+      <text x="948" y="460" class="tree-title">History</text>
+      <text x="948" y="492" class="tree-item">Version 23 · 2m ago</text>
+      <text x="948" y="524" class="tree-item">Version 22 · 18m ago</text>
+      <text x="948" y="556" class="tree-item">Version 21 · 1h ago</text>
+
+      <rect x="388" y="628" width="516" height="44" rx="12" ry="12" fill="#111c33" stroke="#1f2a44" stroke-width="1.5" />
+      <text x="408" y="656" class="badge">Autosave</text>
+      <text x="472" y="656" class="badge-strong">Synced · 12:24:18</text>
+    </g>
+  </g>
+</svg>
