@@ -47,22 +47,46 @@ CrewAI Command Center is a full-stack web application that provides a centralize
 
 ## 🚀 Quick Start
 
-Pick Docker for the bundled stack or start services locally when you need more control.
+Choose the workflow that fits your setup: run the whole stack with Docker or start the backend/frontend locally for finer control.
 
-### Common prerequisites
-1. `git clone https://github.com/kdkiss/CrewAI-Command-Center.git && cd CrewAI-Command-Center`
-2. `cp backend/.env.example backend/.env && cp frontend/.env.example frontend/.env`
+### 1. Prepare the project
 
-### Run with Docker
-- `docker compose -f docker-compose.dev.yml up --build`, then open http://localhost:3000 (FastAPI docs: http://localhost:8001/docs).
-- Need extra configuration? See [docker-compose.dev.yml](docker-compose.dev.yml) and [docker-setup.md](docker-setup.md).
-- On Linux hosts, match the container user to your UID/GID to keep the mounted
-  `crews/` directory writable: `APP_UID=$(id -u) APP_GID=$(id -g) docker compose up`.
+```bash
+git clone https://github.com/kdkiss/CrewAI-Command-Center.git
+cd CrewAI-Command-Center
+cp backend/.env.example backend/.env
+cp frontend/.env.example frontend/.env
+```
 
+### 2A. Launch with Docker (recommended)
 
-### Run locally (Python + Node)
-- Backend dev server: `cd backend && uvicorn main:app --reload --port 8001 --host 0.0.0.0` (dependency setup lives in [backend/README.md](backend/README.md)).
-- Frontend dev server: `cd frontend && npm install && npm run dev` (full workflow in [frontend/README.md](frontend/README.md)).
+```bash
+docker compose -f docker-compose.dev.yml up --build
+```
+
+- Open the app at http://localhost:3000 (FastAPI docs: http://localhost:8001/docs).
+- Review extra options in [docker-compose.dev.yml](docker-compose.dev.yml) and [docker-setup.md](docker-setup.md).
+- On Linux, keep the mounted `crews/` directory writable by matching container and host IDs:
+
+  ```bash
+  APP_UID=$(id -u) APP_GID=$(id -g) docker compose up
+  ```
+
+### 2B. Run services locally (Python + Node)
+
+```bash
+# Backend API
+cd backend
+uvicorn main:app --reload --port 8001 --host 0.0.0.0
+
+# Frontend UI (in a separate shell)
+cd ../frontend
+npm install
+npm run dev
+```
+
+- Backend dependency setup lives in [backend/README.md](backend/README.md).
+- The frontend development workflow is detailed in [frontend/README.md](frontend/README.md).
 
 ## 🐳 Deployment
 
